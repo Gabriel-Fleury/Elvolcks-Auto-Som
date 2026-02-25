@@ -1,0 +1,214 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            min-height: 200vh; /* Só para testar rolagem */
+        }
+
+        header {
+           position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #0314a8 !important; /* !important para garantir */
+            padding: 30px 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .bolinhas-left {
+            position: absolute;
+            left: 0;  /* Colado no canto esquerdo */
+            top: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 15px 0;
+            pointer-events: none;
+        }
+
+        /* Container das bolinhas */
+        .bolinhas-left, .bolinhas-right {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Distribui as 8 linhas igualmente */
+            padding: 0;
+            pointer-events: none;
+        }
+
+        .bolinhas-left {
+            left: 0;
+        }
+
+        .bolinhas-right {
+            right: 0;
+        }
+
+        /* Cada linha de bolinhas */
+        .linha-bolinhas {
+            display: flex;
+            gap: 5px;
+            margin: 0;
+        }
+
+        /* Primeira linha - colada no topo */
+        .bolinhas-left .linha-bolinhas:first-child,
+        .bolinhas-right .linha-bolinhas:first-child {
+            margin-top: 0; /* Zero para colar no topo */
+        }
+
+        /* Última linha - colada no fundo */
+        .bolinhas-left .linha-bolinhas:last-child,
+        .bolinhas-right .linha-bolinhas:last-child {
+            margin-bottom: 0; /* Zero para colar no fundo */
+        }
+
+        /* Linhas da esquerda */
+        .bolinhas-left .linha-bolinhas {
+            justify-content: flex-start;
+        }
+
+        /* Linhas da direita */
+        .bolinhas-right .linha-bolinhas {
+            justify-content: flex-end;
+        }
+
+        /* Estilo das bolinhas */
+        .bolinha {
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.9;
+            box-shadow: 0 0 6px rgba(255,255,255,0.6);
+        }
+
+        .titulo h1 {
+            
+            text-align: center;
+            color: white !important;
+            font-size: 7.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-family: Caveat, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra suave */
+        }
+        .titulo h2 {
+            margin-top: -17px;
+            text-align: center;
+            color: white !important;
+            font-size: 4.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-family: Caveat, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra suave */
+        }
+        .titulo h1 .destaque {
+         color: #ff0000;
+        font-size: 7.8rem;
+        font-weight: 900;
+        
+       }
+
+       /* BOTÃO FLUTUANTE WHATSAPP */
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #25d366, #128C7E);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 9999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .btn-whatsapp img {
+            width: 35px;
+            height: 35px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp span {
+            position: absolute;
+            white-space: nowrap;
+            font-size: 16px;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        /* Efeito hover - expande o botão */
+        .btn-whatsapp:hover {
+            width: 180px;
+            border-radius: 30px;
+            justify-content: flex-start;
+            padding-left: 15px;
+            gap: 10px;
+        }
+
+        .btn-whatsapp:hover img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .btn-whatsapp:hover span {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Animação de pulsar (opcional) */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .btn-whatsapp {
+            animation: pulse 2s infinite;
+        }
+
+        /* Para telas menores */
+        @media (max-width: 768px) {
+            .btn-whatsapp {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+            
+            .btn-whatsapp:hover {
+                width: 160px;
+            }
+}
+       
+    
