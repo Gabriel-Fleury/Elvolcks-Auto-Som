@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
     
 :root{
-    --primary: #0111a3;
+    --primary: #3845b9;
     --secondary: #d80000;
-    --dark: #2a2a2a;
+    --dark: #585858;
     --accent: #ffd700;
-    --light: #ebebeb;
+    --light: #f8f8f8;
+    --darkblue: #2e1155;
 }
 
 
@@ -21,6 +22,7 @@ body{
     background: var(--light); /* Cor de fundo usando variável CSS */
     color: var(--dark);      /* Cor do texto usando variável CSS */
     overflow-x: hidden;      /* Esconde a barra de rolagem horizontal */
+    
 }
 
 /* Container principal para centralizar o conteúdo */
@@ -93,6 +95,7 @@ header{
     gap: 4rem;                   /* Espaço entre colunas */
     align-items: center;         /* Centraliza verticalmente */
     position: relative;          /* Para posicionamento de elementos filhos */
+    padding-top: 100px;
 }
 
 /* Conteúdo da seção Hero */
@@ -101,22 +104,27 @@ header{
     z-index: 1;         /* Garante que fique acima de possíveis elementos de fundo */
 }
 /* Título principal da seção Hero */
-.hero-title{
-    top: -20px;             /* Ajuste fino de posicionamento */
+.hero-title{ 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    margin-left: 100px;
     font-size: 4.1rem;      /* Tamanho grande de fonte */
     line-height: 1.1;       /* Espaçamento entre linhas */
-    margin-bottom: 2rem;    /* Margem inferior */
-    background: linear-gradient(45deg, var(--dark), var(--primary)); /* Gradiente de cores */
+    margin-bottom: 3.5rem;    /* Margem inferior */
+    background: linear-gradient(70deg, var(--darkblue), var(--primary)); /* Gradiente de cores */
     -webkit-background-clip: text; /* Aplica o gradiente apenas ao texto */
-    -webkit-text-fill-color: transparent; /* Torna o texto transparente para mostrar o gradiente */
+    -webkit-text-fill-color: transparent; /* Torna o texto transparente para mostrar o gradiente */ 
 }
 
 /* Texto descritivo da seção Hero */
 .hero-text{
-    font-size: 1.2rem;      /* Tamanho de fonte legível */
-    color: #666;            /* Cor cinza para melhor contraste */
+    font-size: 1.6rem;      /* Tamanho de fonte legível */
+    color: var(--dark);            /* Cor cinza para melhor contraste */
     margin-bottom: 3rem;    /* Margem inferior maior */
-    max-width: 500px;       /* Limita a largura para melhor legibilidade */
+    max-width: 700px;       /* Limita a largura para melhor legibilidade */
+    text-align: justify;
+    margin-left: auto;      /* Centraliza à esquerda */
+    margin-right: auto;     /* Centraliza à direita */
+    
 }
 
 /* Container da imagem do Hero */
@@ -128,9 +136,122 @@ header{
 
 /* Estilo da imagem dentro do container */
 .hero-image img{
-    border-radius: 3%;
-    width: 906px;           /* Ocupa 100% do container */
-    height: 900px;
+    border-radius: 0 0 16px 16px;
+    width: 100%;           /* Ocupa 100% do container */
+    height: 100vh;
     object-fit: cover;     /* Garante que a imagem cubra todo o espaço */
 }
+
+.serviços{
+    background-color: var(--light);
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+
+.serviços h1{
+    padding: 15px;
+    background: ;
+}
+
+.container-serviços {
+    padding: 15px;
+    max-width: 100%;
+    min-width: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carrossel-wrapper {
+    overflow: hidden;
+}
+
+.carrossel {
+    display: flex;
+    gap: 1.2rem;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.carrossel.paused {
+    animation-play-state: paused;
+}
+
+.card {
+    position: relative;
+    min-height: 350px;
+    min-width: 450px;
+    border-radius: 40px;
+    flex-shrink: 0;
+    overflow: hidden;
+    
+    /* Para centralizar o conteúdo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagem de fundo */
+.card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Overlay escuro para melhor legibilidade do texto */
+.card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, var(--dark), var(--primary));
+    opacity: 0.5; /* Ajuste para mais claro ou mais escuro */
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+/* Efeito no hover - overlay mais transparente */
+.card:hover .overlay {
+    opacity: 0.3;
+}
+
+/* Título do card - fica sobre a imagem */
+.card-titulo {
+    position: relative;
+    z-index: 3;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    
+    /* Efeito de texto com sombra */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
+    /* Animação suave */
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    
+    /* Garante que o título ocupe toda a largura */
+    width: 100%;
+    
+    /* Opcional: gradiente no texto */
+    background: linear-gradient(135deg, #fff, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Efeito no hover do título */
+.card:hover .card-titulo {
+    transform: scale(1.05);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
     
