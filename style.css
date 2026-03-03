@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
     
 :root{
-    --primary: #3845b9;
+    --primary: #1A35E0;
     --secondary: #d80000;
     --dark: #585858;
     --accent: #ffd700;
     --light: #f8f8f8;
-    --darkblue: #2e1155;
+    --darkblue: #0A1350;
 }
 
 
@@ -141,6 +141,81 @@ header{
     height: 100vh;
     object-fit: cover;     /* Garante que a imagem cubra todo o espaço */
 }
+
+.produtos{
+    padding: 50px 20px;
+    width: 100%;
+    height: 100vh;
+}
+
+.container-produtos {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-title-produtos {
+    
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+     background: linear-gradient(to right, #050377, #0696cf); /* Gradiente de cores */
+    -webkit-background-clip: text; /* Aplica o gradiente apenas ao texto */
+    -webkit-text-fill-color: transparent; /* Torna o texto transparente para mostrar o gradiente */ 
+}
+
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    row-gap: 180px; /* Isso afeta apenas o espaçamento entre linhas */
+    
+}
+
+.produto-item {
+    position: relative;
+    width: 250px;
+    height: 250px; /* Altura fixa para cada imagem */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.produto-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantém a proporção da imagem e cobre todo o espaço */
+    transition: transform 0.3s ease;
+    
+}
+
+.produto-titulo{
+    background-color: #0A1350;
+    text-align: center;
+    color: #005092;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .serviços{
     background-color: var(--light);
