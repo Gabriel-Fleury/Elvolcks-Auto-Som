@@ -5,7 +5,7 @@
     --secondary: #d80000;
     --dark: #585858;
     --accent: #ffd700;
-    --light: #f8f8f8;
+    --light: #dddddd;
     --darkblue: #0A1350;
 }
 
@@ -88,64 +88,71 @@ header{
 }
 
 /* Seção Hero (principal) */
-.hero{
-    padding: 1px 0 0 30px;       /* Padding personalizado */
-    display: grid;               /* Layout em grid */
-    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
-    gap: 4rem;                   /* Espaço entre colunas */
-    align-items: center;         /* Centraliza verticalmente */
-    position: relative;          /* Para posicionamento de elementos filhos */
-    padding-top: 100px;
+.hero {
+    width: 100%;
+    overflow: hidden;
 }
 
-/* Conteúdo da seção Hero */
-.hero-content{
-    position: relative;  /* Para z-index funcionar */
-    z-index: 1;         /* Garante que fique acima de possíveis elementos de fundo */
-}
-/* Título principal da seção Hero */
-.hero-title{ 
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    margin-left: 100px;
-    font-size: 4.1rem;      /* Tamanho grande de fonte */
-    line-height: 1.1;       /* Espaçamento entre linhas */
-    margin-bottom: 3.5rem;    /* Margem inferior */
-    background: linear-gradient(70deg, var(--darkblue), var(--primary)); /* Gradiente de cores */
-    -webkit-background-clip: text; /* Aplica o gradiente apenas ao texto */
-    -webkit-text-fill-color: transparent; /* Torna o texto transparente para mostrar o gradiente */ 
+.hero-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-/* Texto descritivo da seção Hero */
-.hero-text{
-    font-size: 1.6rem;      /* Tamanho de fonte legível */
-    color: var(--dark);            /* Cor cinza para melhor contraste */
-    margin-bottom: 3rem;    /* Margem inferior maior */
-    max-width: 700px;       /* Limita a largura para melhor legibilidade */
-    text-align: justify;
-    margin-left: auto;      /* Centraliza à esquerda */
-    margin-right: auto;     /* Centraliza à direita */
-    
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Altura total da viewport */
+    overflow: hidden;
 }
 
-/* Container da imagem do Hero */
-.hero-image{
-    position: relative;     /* Permite posicionamento absoluto de elementos filhos */
-    overflow: hidden;       /* Esconde qualquer conteúdo que ultrapasse */
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Transição personalizada */
+.hero-image {
+    width: 100%;
+    height: 120%; /* Um pouco maior para dar espaço para o movimento */
+    object-fit: cover;
+    filter: blur(3px);
+    position: absolute;
+    top: -10%; /* Começa um pouco deslocado para cima */
+    left: 0;
+    will-change: transform; /* Melhora a performance */
 }
 
-/* Estilo da imagem dentro do container */
-.hero-image img{
-    border-radius: 0 0 16px 16px;
-    width: 100%;           /* Ocupa 100% do container */
-    height: 100vh;
-    object-fit: cover;     /* Garante que a imagem cubra todo o espaço */
+
+
+.hero-title-home {
+    font-family:'Agbalumo' ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Ajuste a cor conforme necessário */
+    text-align: center;
+    font-size: 10rem; /* Ajuste o tamanho */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para melhor legibilidade */
+    z-index: 2;
+    width: 100%;
+    padding: 20px;
+}
+
+.hero-subtitle{
+    font-family:'Agbalumo' ;
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Ajuste a cor conforme necessário */
+    text-align: center;
+    font-size: 5rem; /* Ajuste o tamanho */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para melhor legibilidade */
+    z-index: 2;
+    width: 100%;
+    padding: 20px;
 }
 
 .produtos{
     padding: 50px 20px;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 .container-produtos {
@@ -166,8 +173,8 @@ header{
 .grid-produtos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    row-gap: 180px; /* Isso afeta apenas o espaçamento entre linhas */
+    gap: 5px;
+    row-gap: 100px; /* Isso afeta apenas o espaçamento entre linhas */
     
 }
 
@@ -191,12 +198,51 @@ header{
 .produto-titulo{
     background-color: #0A1350;
     text-align: center;
-    color: #005092;
+    color: #4797d8;
+}
+
+.informacoes{
+    padding: 10px;
+    background-color: gray;
+    color: rgb(216, 215, 215);
+    font-weight: bold;
+}
+
+.container-informacoes{
+    display: flex;
+    gap: 2rem;
+    
+    justify-content: center
+}
+
+.container-informacoes p{
+    font-size: 14px;
 }
 
 
+/* ADICIONE ISSO AO SEU CSS PARA TESTAR */
+.info-endereco a {
+    
+    
+    
+    color: rgb(216, 215, 215);
+    text-decoration: none !important;
+    font-weight: bold !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 9999 !important;
+}
 
-
+.info-telefone a{
+    color: rgb(216, 215, 215);
+    text-decoration: none !important;
+    font-weight: bold !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 9999 !important;
+}
 
 
 
@@ -228,6 +274,16 @@ header{
 .serviços h1{
     padding: 15px;
     background: ;
+}
+
+.hero-title-serviços {
+    
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+     background: linear-gradient(to right, #050377, #0696cf); /* Gradiente de cores */
+    -webkit-background-clip: text; /* Aplica o gradiente apenas ao texto */
+    -webkit-text-fill-color: transparent; /* Torna o texto transparente para mostrar o gradiente */ 
 }
 
 .container-serviços {
