@@ -49,3 +49,49 @@ document.addEventListener('DOMContentLoaded', () => {
         intervalo = setInterval(moverCarrossel, 2000);
     });
 });
+
+// Aguarda o DOM carregar completamente
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Seleciona todos os elementos com a classe 'faq-pergunta'
+    const perguntas = document.querySelectorAll('.faq-pergunta');
+    
+    // Para cada pergunta encontrada
+    perguntas.forEach(function(pergunta) {
+        
+        // Adiciona um evento de clique
+        pergunta.addEventListener('click', function() {
+            
+            // Pega a resposta que está logo após a pergunta
+            const resposta = this.nextElementSibling;
+            
+            // Verifica se a resposta já está aberta
+            const estaAberta = resposta.classList.contains('ativo');
+            
+            // Se você quiser fechar as outras quando abrir uma (opcional)
+            // Descomente as linhas abaixo se quiser esse comportamento
+            
+            /*
+            // Fecha todas as respostas
+            document.querySelectorAll('.faq-resposta').forEach(function(r) {
+                r.classList.remove('ativo');
+            });
+            
+            // Remove a classe 'ativo' de todas as perguntas
+            document.querySelectorAll('.faq-pergunta').forEach(function(p) {
+                p.classList.remove('ativo');
+            });
+            */
+            
+            // Se não estiver aberta, abre (ou fecha se estiver aberta)
+            if (!estaAberta) {
+                resposta.classList.add('ativo');
+                this.classList.add('ativo');
+            } else {
+                resposta.classList.remove('ativo');
+                this.classList.remove('ativo');
+            }
+        });
+    });
+    
+});

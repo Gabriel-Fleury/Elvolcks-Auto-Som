@@ -149,7 +149,7 @@ header{
     padding: 20px;
 }
 
-.produtos{
+.products{
     padding: 50px 20px;
     width: 100%;
     height: 100%;
@@ -203,7 +203,7 @@ header{
 
 .informacoes{
     padding: 10px;
-    background-color: gray;
+    background-color: var(--darkblue);
     color: rgb(216, 215, 215);
     font-weight: bold;
 }
@@ -244,25 +244,6 @@ header{
     z-index: 9999 !important;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .serviços{
     background-color: var(--light);
     text-align: center;
@@ -273,7 +254,7 @@ header{
 
 .serviços h1{
     padding: 15px;
-    background: ;
+    
 }
 
 .hero-title-serviços {
@@ -385,4 +366,149 @@ header{
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
-    
+/* Estilos do footer */
+.site-footer {
+    background: var(--darkblue) ;
+    color: #4797d8;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+    padding: 40px 0 20px 0;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; /* Garante que fiquem em linha */
+    justify-content: space-between;
+    align-items: flex-start; /* Alinha ao topo */
+    padding: 0 20px;
+    gap: 40px; /* Espaço entre as colunas */
+}
+
+.footer-coluna {
+    flex: 1; /* Faz as colunas terem o mesmo tamanho */
+    min-width: 0; /* Previne overflow em telas pequenas */
+}
+
+/* Coluna do FAQ */
+.faq-coluna {
+    width: 50%; /* Garante 50% de largura */
+}
+
+/* Coluna de informações */
+.info-coluna {
+    width: 50%; /* Garante 50% de largura */
+}
+
+/* Títulos das colunas */
+.footer-titulo {
+    color: #4797d8;
+    font-size: 22px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #4797d8;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* ESTILOS DO FAQ */
+.faq-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.faq-pergunta {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 15px 0;
+    padding-right: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #f0f0f0;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+}
+
+.faq-pergunta:hover {
+    color: #4797d8;
+    padding-left: 5px;
+}
+
+/* Indicador visual (+ / -) */
+.faq-pergunta::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #4797d8;
+    transition: transform 0.3s;
+}
+
+
+
+.faq-resposta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.3s ease-in-out;
+    background-color: #2a2a2a;
+    padding: 0 15px;
+    border-radius: 0 0 5px 5px;
+    color: #ccc;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.faq-resposta.ativo {
+    max-height: 200px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+}
+
+.faq-resposta p {
+    margin: 0;
+}
+
+/* ESTILOS DA COLUNA DE INFORMAÇÕES */
+.info-item {
+    margin-bottom: 25px;
+}
+
+.info-item h4 {
+    color: #4797d8;
+    font-size: 18px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.info-item h4::before {
+    content: '►';
+    position: absolute;
+    left: 0;
+    color: #4797d8;
+    font-size: 12px;
+}
+
+.info-item p {
+    margin: 8px 0;
+    color: #ccc;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+/* COPYRIGHT */
+.footer-copyright {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 0 0 0;
+    border-top: 1px solid #333;
+    font-size: 13px;
+    color: #888;
+    width: 100%;
+}
